@@ -9,7 +9,7 @@
 
 | Network | Healthy Scenario Result | Stressed Scenario Result | Oncogene Scenario Result | Number of Attractors | Cancer-like Basin Size | Basin Percentage |
 |---------|--------|--------|--------|--------|--------|--------|
-| Normal Network | Growth OFF, p53 OFF (healthy resting) | Death ON, p53 ON (appropriate apoptosis) | Growth ON (normal growth response) | 3 attractors | 8 states | 3.1% |
+| Normal Network | Growth OFF, p53 OFF (healthy resting) | Death ON, p53 ON (appropriate  apoptosis) | Growth ON (normal growth response) | 3 attractors | 8 states | 3.1% |
 | Mutation A: p53 KO | Growth ON (inappropriate) | Growth ON (cannot respond to damage) | Growth ON | 2 attractors | 128 states | 50.0% |
 | Mutation B: MDM2 Amplification | Growth ON (inappropriate) | Growth ON (p53 inhibited by excess MDM2) | Growth ON | 2 attractors | 192 states | 75.0% |
 | Mutation C: PTEN KO | Growth ON (inappropriate) | Growth ON (growth inhibitor deleted) | Growth ON | 2 attractors | 256 states | 100.0% |
@@ -89,19 +89,19 @@
 
 ---
 
-## Question 1: Which mutation is most dangerous and why? Provide quantitative evidence.
+## Question 1: Which mutation is most dangerous and why? Provide quantitative evidence?
 
 PTEN KO and CDK2 Amplification achieve 100% cancer basin versus 3.1% normal. PTEN eliminates growth inhibition; CDK2 bypasses upstream signals—both show 32.3-fold escalation. p53 KO (50%) and MDM2 Amp (75%) retain protection, but PTEN/CDK2 eliminate all homeostatic alternatives.
 
 ---
 
-## Question 2: Explain the role of feedback loops (e.g., MYC → MDM2 → p53)
+## Question 2: Explain the role of feedback loops (e.g., MYC → MDM2 → p53)?
 
 MYC-MDM2-p53 feedback creates oscillatory homeostasis: MYC induces MDM2, which degrades p53; p53 inhibits MYC and activates p21. Normal maintains 96.9% healthy basin. p53 KO (50%) and MDM2 Amp (25%) show degradation. PTEN/CDK2 achieve 100% cancer by bypassing this feedback entirely.
 
 ---
 
-## Q3: Limitations.
+## Q3: Limitations
 
 **Limitation 1: Binary Discretization.** ON/OFF discretization loses dose-response. p53 at 10% versus 80% produce different arrest, yet model treats both identically, preventing partial drug inhibition and personalized therapy modeling.
 
