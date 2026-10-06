@@ -23,12 +23,10 @@
 
 ### Description
 
-Describe how the infected region spreads and how the tissue deforms.
 Spread: In the very beginning, the tissue is highly ordered, with long and vertical cells with straight cell walls. During the simulation the cells progressively start to deform and spread from the initially affected region(in the center of the tissue) into surrounding tissues(closer to borders, left part of the tissue was changed the most). 
 How the tissue deforms: cells close to this region change shape from rectangle shape to circle one first, then surrounding cells start to deform. Therefore, the tissue becomes less organized. Tissues in the left upper corner seem to be deformed the most, while cells in the right part seem to be more organized and cells have form of rectangles/squares.
----
 
-## 2. CellHouseKeeping
+## 2. Infection analysis
 
 ### How is a cell wall stiffness reduced as a function of chemical level?
 
