@@ -35,3 +35,22 @@ The cell wall stiffness is reduced when level of the chemical 0 in a normal cell
 ### What does the pathogen do differently?
 
 The pathogen cells are excluded from the chemical-dependent wall weakening. Their wall stiffness stays at the default value. But pathogen cells grow, they can divide and produce the chemical signal. This chemical then spreads to neighbouring cells and weakens their walls, that leads to tissue deformation.
+## 3.Diffusion coefficient
+
+the diffusion coefficient in CelltoCellTransport inversely correlates with the stiffnes of the wall.The is stiffness calculated by getLengthAndStiffness, which combines wall element stiffnesses from both adjacent cells, and lengths are used as the weights. the transport term is 
+\[
+\phi=L\,D\,(C_2-C_1)
+\]
+So,transport increases with wall length, the diffusion coefficient, and the chemical concentration difference. The area-dependent factors corr1 and corr2 then scale the changes in the two cells. As diffusion coefficient increases chemicals ove into neighboring cells faster and when chemicals reach plant cells wall stiffnes decreases and diffusion coefficient increases again.
+## 4. rel_cell_div_threshold
+IF cell is a pathogen:increase target area
+
+IF actual area > rel_cell_div_threshold × base area:
+        divide cell
+
+So when we change rel cel div threshold two sitation can happen:
+
+if we decrease the threshold cells can divide at a smaller size,pathogen cell count increases.
+if we increase threshold cells must grow larger before dividing, generally delaying population expansion.
+## 5.Difference to other models we worked with
+tissue spatial geometry is a huge factor in determining interactions between cells.Cells interact through shared walls, and transport depends on the properties of those walls.This is different to fixed neighbor models where interactions follow rules. here interactions can change based on changes in cells
