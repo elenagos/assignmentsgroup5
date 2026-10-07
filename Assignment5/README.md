@@ -56,3 +56,21 @@ if we increase threshold cells must grow larger before dividing, generally delay
 we ran rel_cell_div_threshold with 1.5 and 3.0, compared with the default of 2. At 1.5, pathogen cells  divided at a smaller size, leading to more frequent divisions and faster population growth. At 3.0, cells grew larger before dividing, resulting in slower population growth. 
 ## 5.Difference to other models we worked with
 tissue spatial geometry is a huge factor in determining interactions between cells.Cells interact through shared walls, and transport depends on the properties of those walls.This is different to fixed neighbor models where interactions follow rules. here interactions can change based on changes in cells
+
+## 6.Plant defence
+
+we would put this at the end of CellHouseKeeping after the whole if/else that weakens the walls. This way the defence sets the stiffness last so the weakening rule does not overwrite it. It only applies to plant cells not pathogen cells which are type 2 ^^
+
+```text
+\(^o^)/
+keep the existing pathogen growth and division rules
+keep the wall setup and wall weakening rules
+
+IF cell type is not 2 AND chemical 0 > defence threshold:
+    FOR each wall element of the cell:
+        set stiffness to a chosen value above 3
+```
+
+3 is the normal stiffness so a value above it makes the wall stiffer. The threshold and the higher stiffness would be values we choose
+
+this adds negative feedback. More chemical triggers stiffer walls which lowers diffusion and slows the chemical spreading to nearby cells. So it works against the original loop where chemical makes walls softer and spreads faster  :)    
